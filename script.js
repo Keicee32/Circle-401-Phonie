@@ -10,15 +10,15 @@ const email = document.querySelector('.email')
 const gender = document.querySelector('.gender')
 const password = document.querySelector('.password')
 const confirmPassword = document.querySelector('.confirm-password')
-const submit = document.querySelector('.btn-submit')
+const form = document.querySelector('.form')
 
 let error = (input) => {
-    input.style.border = "2px solid red"
-    input.previousElementSibling.style.color = "red"
+    input.style.border = "2px solid crimson"
+    input.previousElementSibling.style.color = "crimson"
 }
 
 let success = (input) => {
-    input.style.border = "2px solid green"
+    input.style.border = "2px solid seagreen"
     input.previousElementSibling.style.color = "seagreen"
 }
 
@@ -36,6 +36,13 @@ let checkInput = (input, number = '') => {
 
         if(input.name === 'phone') {
             input.previousElementSibling.style.color = ""
+            if(input.style.border === '2px solid crimson') {
+                input.previousElementSibling.previousElementSibling.style.color = "red"
+            } else if (input.style.border === '2px solid seagreen') {
+                input.previousElementSibling.previousElementSibling.style.color = "seagreen"
+            } else {
+                input.previousElementSibling.previousElementSibling.style.color = ""
+            }
         }
     })
 
@@ -73,8 +80,29 @@ function setDialingCode() {
     })
     
 }
-
 setDialingCode()
+
+let genderValidation = () => {
+    gender.addEventListener('change', () => {
+        if(gender.value === 'male') {
+            success(gender)
+        }
+
+        if(gender.value === 'female') {
+            success(gender)
+        }
+
+        if(gender.value === '') {
+            error(gender)
+        }
+
+        if(gender.value === 'others') {
+            success(gender)
+        }
+    })
+}
+genderValidation()
+
 
 let phoneValidation = () => {
     let img = document.createElement('img')

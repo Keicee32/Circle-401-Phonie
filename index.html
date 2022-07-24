@@ -11,7 +11,7 @@
     <div class="bg-img">
         <div class="content">
             <h1>Sign-up Form</h1>
-            <form action="" method="post">
+            <form action="" method="post" class='form'>
                 <div class="field">
                     <span class="fa fa-user fa-2x"></span>
                     <input type="text" name="Full_name" class="full_name" placeholder="Full Name">
@@ -19,7 +19,7 @@
 
                 <div class="field" >
                     <span class="fa fa-user-o fa-2x"></span>
-                    <input type="text" name="username" minlength="6" class="username" placeholder="Username">
+                    <input type="text" name="username" class="username" placeholder="Username">
                 </div>
 
                 <div class="field" >
@@ -34,7 +34,7 @@
                 <div class="field" >
                     <span class="fa fa-mobile fa-2x"></span>
                     <input class="country-code" type="text" name="country-code">
-                    <input type="tel" name="phone" class="phone" pattern="[0-9]{11}" placeholder="Phone Number">
+                    <input type="tel" name="phone" class="phone" placeholder="Phone Number">
                 </div>
 
                 <div class="field">
@@ -54,16 +54,16 @@
 
                 <div class="field">
                     <span class="fa fa-lock fa-2x"></span>
-                    <input type="password" placeholder="Password" class="password">
+                    <input type="password" name="password" placeholder="Password" class="password">
                 </div>
 
                 <div class="field">
                     <span class="fa fa-eye fa-2x"></span>
-                    <input type="password" placeholder="Confirm Password" class="confirm-password">
+                    <input type="password" name="confirm-password" placeholder="Confirm Password" class="confirm-password">
                 </div>
 
                 <div class="btn">
-                    <button class="btn-submit">Submit</button>
+                    <button name='button' class="btn-submit">Submit</button>
                 </div>
 
             </form>
